@@ -3,10 +3,10 @@
 const { Router } = require('express');
 const router = new Router();
 
-const mongoose = require("mogoose"); // has to be added
+const mongoose = require("mongoose"); // has to be added
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
-
+const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
 const User = require('../models/User.model');
  
 
@@ -118,7 +118,6 @@ res.redirect("/");
 
 });
 
-const { isLoggedIn, isLoggedOut } = require('../middleware/route-guard.js');
  
 
 
